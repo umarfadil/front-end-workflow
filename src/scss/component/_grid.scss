@@ -1,0 +1,108 @@
+$grid-columns: 12 !default;
+$gutter-width: 1rem !default;
+$outer-margin: 2rem !default;
+$container-width: 1200px !default;
+
+$margin-row: $gutter-width * .5 * -1;
+$half-gutter-width: $gutter-width * .5;
+
+@mixin grid-breakpoints($screen) {
+  @if $screen == sizeLarge {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $screen == sizeMedium {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $screen == sizeSmall {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  margin: 0 auto;
+  max-width: $container-width;
+}
+.container-fluid {
+  margin: 0 auto;
+  padding-right: $outer-margin;
+  padding-left: $outer-margin;
+}
+
+.column__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: $margin-row;
+  margin-left: $margin-row;
+}
+
+@mixin grid-common {
+  position: relative;
+  width: 100%;
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+}
+
+.column {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.column {
+  @include grid-common;
+}
+
+// grid extra small default
+@for $i from 1 through $grid-columns {
+  .is-#{$i} {
+    flex: none;
+    flex-basis: 100% / $grid-columns * $i;
+    max-width: 100% / $grid-columns * $i;
+  }
+}
+// grid small
+@include grid-breakpoints(sizeSmall) {
+  $small: sm;
+
+  @for $i from 1 through $grid-columns {
+    .is-#{$small}-#{$i} {
+      flex: none;
+      flex-basis: 100% / $grid-columns * $i;
+      max-width: 100% / $grid-columns * $i;
+    }
+  }
+}
+// grid medium
+@include grid-breakpoints(sizeMedium) {
+  $medium: md;
+
+  @for $i from 1 through $grid-columns {
+    .is-#{$medium}-#{$i} {
+      flex: none;
+      flex-basis: 100% / $grid-columns * $i;
+      max-width: 100% / $grid-columns * $i;
+    }
+  }
+}
+// grid large
+@include grid-breakpoints(sizeLarge) {
+  $large: lg;
+
+  @for $i from 1 through $grid-columns {
+    .is-#{$large}-#{$i} {
+      flex: none;
+      flex-basis: 100% / $grid-columns * $i;
+      max-width: 100% / $grid-columns * $i;
+    }
+  }
+}

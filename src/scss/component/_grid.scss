@@ -1,7 +1,5 @@
 $grid-columns: 12 !default;
 $gutter-width: 1rem !default;
-$outer-margin: 2rem !default;
-$container-width: 1200px !default;
 
 $margin-row: $gutter-width * .5 * -1;
 $half-gutter-width: $gutter-width * .5;
@@ -20,23 +18,6 @@ $half-gutter-width: $gutter-width * .5;
       @content;
     }
   }
-}
-
-.container {
-  width: 100%;
-  padding-right: $half-gutter-width;
-  padding-left: $half-gutter-width;
-  margin-right: auto;
-  margin-left: auto;
-}
-.container {
-  margin: 0 auto;
-  max-width: $container-width;
-}
-.container-fluid {
-  margin: 0 auto;
-  padding-right: $outer-margin;
-  padding-left: $outer-margin;
 }
 
 .column__row {

@@ -6,26 +6,37 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Simple Front-end Workflow</title>
    <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/test.css">
    
    <style>
-      .documentation {
-         padding: 25px;
-      }
-      .container, .column {
-         padding: 15px;
-         text-align: center;
-         border: 1px solid #000;
-      }
    </style>
 
 </head>
 <body>
    <div class="documentation">
-      <div class="container">
-         <div class="column__row">
-            <div class="column">column default</div>
-            <div class="column">column default</div>
-            <div class="column">column default</div>
+      <!-- layout -->
+      <div class="layout">
+         <h2 class="section-title">Layout</h2>
+         <div class="container border-1">
+            medium container { 1110px }
+         </div>
+         <br>
+         <div class="container-fluid border-1">
+            large container
+         </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <!-- navbar -->
+      <div class="grid">
+         <h2 class="section-title">Grid</h2>
+         <div class="container">
+            <div class="column__row">
+               <div class="column">column default</div>
+               <div class="column">column default</div>
+               <div class="column">column default</div>
+            </div>
          </div>
       </div>
    </div>
